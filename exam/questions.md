@@ -1,231 +1,392 @@
-# Level 2 Written Exam
+# Level 2 Written Exam: Certified Agent Engineer
 
-**Questions:** 25
+**Questions:** 40 (36 multiple choice + 4 short answer)
+**Time:** 60 minutes
+**Passing Score:** 80% (32/40)
 
 ---
 
+## Section A: Function Results and Actions (8 questions)
+
 ### Question 1
 
-[Question about DataMap - replace with actual question]
+What class is used to return results from SWAIG functions?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) FunctionResponse
+B) SwaigFunctionResult
+C) ActionResult
+D) ToolResponse
 
 ### Question 2
 
-[Question about skills - replace with actual question]
+Which method chains multiple actions to a function result?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `.chain_action()`
+B) `.append_action()`
+C) `.add_action()`
+D) `.with_action()`
 
 ### Question 3
 
-[Question about contexts - replace with actual question]
+What does `post_process=True` do when adding an action?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) Processes the action before the AI speaks
+B) Executes the action after the AI finishes speaking
+C) Adds the action to a processing queue
+D) Validates the action parameters
 
 ### Question 4
 
-[Question about state management - replace with actual question]
+Which action type sends an SMS message?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `sms`
+B) `send_message`
+C) `send_sms`
+D) `text`
 
 ### Question 5
 
-[Question about recording - replace with actual question]
+How do you store data that persists for the call duration?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `add_action("store_data", {...})`
+B) `update_global_data({...})`
+C) `add_action("save_state", {...})`
+D) `add_action("persist", {...})`
 
 ### Question 6
 
-[Question about transfer - replace with actual question]
+What happens when you chain multiple `add_action()` calls?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) Only the last action executes
+B) Actions execute in sequence
+C) Actions execute in parallel
+D) An error is raised
 
 ### Question 7
 
-[Question about multi-agent - replace with actual question]
+Which code correctly transfers a call after speaking?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `SwaigFunctionResult("Transferring...").add_action("transfer", {"dest": "+1555"}, post_process=True)`
+B) `SwaigFunctionResult("Transferring...").transfer("+1555", after_speech=True)`
+C) `SwaigFunctionResult("Transferring...").post_action("transfer", "+1555")`
+D) `SwaigFunctionResult("Transferring...", transfer="+1555")`
 
 ### Question 8
 
-[Question about DataMap - replace with actual question]
+What is the purpose of the `set_end_of_speech_prompt` action?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) Sets what the AI says at call end
+B) Changes the prompt after current speech
+C) Defines the end-of-call behavior
+D) Sets the silence timeout
+
+---
+
+## Section B: DataMap Integration (6 questions)
 
 ### Question 9
 
-[Question about skills - replace with actual question]
+What is DataMap primarily used for?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) Storing agent configuration
+B) Making serverless REST API calls
+C) Mapping data between agents
+D) Creating database schemas
 
 ### Question 10
 
-[Question about contexts - replace with actual question]
+In a DataMap webhook URL, how do you reference a function argument named `user_id`?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `{user_id}`
+B) `${args.user_id}`
+C) `{{user_id}}`
+D) `%{args.user_id}`
 
 ### Question 11
 
-[Question about state management - replace with actual question]
+Which DataMap output field specifies what the AI says?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `speech`
+B) `message`
+C) `response`
+D) `say`
 
 ### Question 12
 
-[Question about recording - replace with actual question]
+How do you reference a JSON response field `email` in the output template?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `${response.email}`
+B) `${email}`
+C) `{data.email}`
+D) `{{email}}`
 
 ### Question 13
 
-[Question about transfer - replace with actual question]
+What field handles API errors in DataMap configuration?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `error_handler`
+B) `on_error`
+C) `error_output`
+D) `fallback`
 
 ### Question 14
 
-[Question about multi-agent - replace with actual question]
+Which is a valid DataMap webhook configuration for a POST request?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `webhooks=[{"url": "...", "method": "POST", "body": {...}, "output": {...}}]`
+B) `webhooks={"endpoint": "...", "type": "POST", "data": {...}}`
+C) `webhook={"url": "...", "post_data": {...}}`
+D) `api_call={"url": "...", "method": "POST", "payload": {...}}`
+
+---
+
+## Section C: Skills and Contexts (8 questions)
 
 ### Question 15
 
-[Question about DataMap - replace with actual question]
+How do you add a built-in skill to an agent?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `agent.use_skill("datetime")`
+B) `agent.add_skill("datetime")`
+C) `agent.enable_skill("datetime")`
+D) `agent.load_skill("datetime")`
 
 ### Question 16
 
-[Question about skills - replace with actual question]
+When creating a custom skill, what class should you inherit from?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `BaseSkill`
+B) `SkillBase`
+C) `CustomSkill`
+D) `AgentSkill`
 
 ### Question 17
 
-[Question about contexts - replace with actual question]
+Which method defines tools in a custom skill?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `__init__()`
+B) `configure()`
+C) `setup()`
+D) `initialize()`
 
 ### Question 18
 
-[Question about state management - replace with actual question]
+What is the purpose of contexts in an agent?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) Store global variables
+B) Define multi-step workflows
+C) Handle errors
+D) Configure logging
 
 ### Question 19
 
-[Question about recording - replace with actual question]
+How do you switch to a different context from a function?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `SwaigFunctionResult().switch_context("name")`
+B) `SwaigFunctionResult().add_action("context_switch", {"context": "name"})`
+C) `SwaigFunctionResult().goto_context("name")`
+D) `SwaigFunctionResult().set_context("name")`
 
 ### Question 20
 
-[Question about transfer - replace with actual question]
+Which class is used to define a context?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `Context`
+B) `ContextBuilder`
+C) `WorkflowContext`
+D) `StepContext`
 
 ### Question 21
 
-[Question about multi-agent - replace with actual question]
+What method adds a step to a context?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `context.add_step("message")`
+B) `context.step("message")`
+C) `context.append("message")`
+D) `context.add("message")`
 
 ### Question 22
 
-[Question about DataMap - replace with actual question]
+How do you restrict which functions are available in a context?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `context.allowed_functions(["func1", "func2"])`
+B) `context.set_functions(["func1", "func2"])`
+C) `context.enable(["func1", "func2"])`
+D) `context.functions = ["func1", "func2"]`
+
+---
+
+## Section D: State and Recording (6 questions)
 
 ### Question 23
 
-[Question about skills - replace with actual question]
+What is the scope of global data set with `set_global_data()`?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) Single function call
+B) Single call/conversation
+C) Agent lifetime (all calls)
+D) Server restart
 
 ### Question 24
 
-[Question about contexts - replace with actual question]
+How do you access global data stored via `update_global_data()` in a function?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `self.get_global_data()`
+B) `raw_data.get("global_data", {})`
+C) `args.get("global_data")`
+D) `self.global_data`
 
 ### Question 25
 
-[Question about state management - replace with actual question]
+Which action controls call recording?
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) `record`
+B) `toggle_record`
+C) `set_recording`
+D) `control_record`
 
+### Question 26
+
+What recording state pauses recording without stopping?
+
+A) `"stop"`
+B) `"pause"`
+C) `"hold"`
+D) `"suspend"`
+
+### Question 27
+
+Which parameter marks a function as handling sensitive data?
+
+A) `sensitive=True`
+B) `private=True`
+C) `secure=True`
+D) `protected=True`
+
+### Question 28
+
+What format provides separate audio channels for caller and agent?
+
+A) `"mono"`
+B) `"dual"`
+C) `"stereo"`
+D) `"split"`
+
+---
+
+## Section E: Multi-Agent and Deployment (8 questions)
+
+### Question 29
+
+What class manages multiple agents?
+
+A) `MultiAgent`
+B) `AgentServer`
+C) `AgentManager`
+D) `ServerAgent`
+
+### Question 30
+
+How do you specify an agent's URL path?
+
+A) `AgentBase(path="/sales")`
+B) `AgentBase(route="/sales")`
+C) `AgentBase(endpoint="/sales")`
+D) `AgentBase(url="/sales")`
+
+### Question 31
+
+In Docker, what directive creates a health check?
+
+A) `HEALTH`
+B) `CHECK`
+C) `HEALTHCHECK`
+D) `MONITOR`
+
+### Question 32
+
+What Kubernetes probe checks if a container is running?
+
+A) `startupProbe`
+B) `readinessProbe`
+C) `livenessProbe`
+D) `healthProbe`
+
+### Question 33
+
+In AWS Lambda, what function is the entry point?
+
+A) `main()`
+B) `handler()`
+C) `lambda_handler()`
+D) `entry_point()`
+
+### Question 34
+
+What is a "cold start" in serverless?
+
+A) Starting a container in cold storage
+B) Initial container startup adding latency
+C) Restarting after an error
+D) Starting without cached data
+
+### Question 35
+
+Which command deploys using Serverless Framework?
+
+A) `serverless publish`
+B) `serverless deploy`
+C) `serverless push`
+D) `serverless launch`
+
+### Question 36
+
+What method handles Lambda requests in SignalWire agents?
+
+A) `agent.handle_request()`
+B) `agent.handle_lambda()`
+C) `agent.lambda_request()`
+D) `agent.process_lambda()`
+
+---
+
+## Section F: Short Answer (4 questions)
+
+### Question 37
+
+Describe two strategies to minimize cold start latency in serverless deployments.
+
+### Question 38
+
+Explain the difference between a cold transfer and a warm transfer.
+
+### Question 39
+
+Why should recording be paused when collecting credit card information?
+
+### Question 40
+
+What are two advantages of using DataMap instead of writing custom webhook code?
+
+---
+
+## Submission
+
+Submit your answers by creating an issue with the "exam-submission" label.
+
+For multiple choice (1-36), format as:
+```
+1. B
+2. C
+...
+```
+
+For short answer (37-40), provide brief answers:
+```
+37. [Your answer]
+38. [Your answer]
+...
+```
+
+Your exam will be graded automatically for multiple choice.
+Short answers are reviewed manually.
