@@ -1,27 +1,28 @@
 # Level 2: Written Exam
 
 **Time Limit:** 60 minutes  
-**Questions:** 25  
-**Passing Score:** 70%
+**Questions:** 40 (36 multiple choice + 4 short answer)
+**Passing Score:** 80% (32/40)
 
 ## Instructions
 
 1. Read all questions in `exam/questions.md`
 2. Create a new Issue using the "Submit Exam" template
 3. Enter your answers in the format: `1. A`
-4. Submit the issue to receive your grade
-5. You may resubmit if you don't pass
+4. For short answer questions, provide brief responses
+5. Submit the issue to receive your grade
+6. You may resubmit if you don't pass
 
 ## Rules
 
 - Open book - you may reference documentation
 - No collaboration with other students
-- Each question has exactly one correct answer
+- Each multiple choice question has exactly one correct answer
 - Answers are case-insensitive (a = A)
 
 ## Grading
 
-Your exam is automatically graded when you submit. Results appear as a comment on your issue.
+Multiple choice answers are auto-graded. Short answer questions are reviewed manually.
 
 - Correct answers are hidden until you pass
 - Issue is closed automatically when you pass
